@@ -1,0 +1,230 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.imgTest {
+  min-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  padding-bottom: 5%;
+}
+
+.img-test{
+  width: 100%;
+  object-fit: cover;
+  max-width: 270px;
+  
+  /*float:left;*/
+}
+
+.imgLocation {
+  min-width: 100%;
+}
+
+.imagenGallery {
+  width: 100%;
+  object-fit: cover;
+  max-width: 270px;
+}
+
+.gallery-title {
+  font-size: 16px;
+  line-height: 8px;
+  display: flex;
+  align-items: center;
+  color: #005238;
+  padding-left: 5px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  padding-bottom: 5px;
+}
+
+.subtitles{
+  font-size: 24px;
+  color: #005238;
+  
+}
+
+
+.paragrah-content {
+  left: 8px;
+  font-family: Lato;
+  font-size: 12px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  color: #005238;
+  padding-left: 5px;
+  font-style: normal;
+  font-weight: normal;
+  padding-top: 8px;
+ 
+}
+
+h3 {
+  font-family: Playfair Display;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 40px;
+  color: #005238;
+}
+
+
+.paragraph-normal{
+  color: #005238;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+  font-family: lato;
+}
+
+.img-carousel{
+  width: 100%;
+}
+
+
+.img-garden{
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  object-position: center;
+}
+
+.activa {
+  background-color: transparent !important;
+  border-bottom: solid green !important;
+}
+
+.modal-green{
+  background-color: #005238;
+}
