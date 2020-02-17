@@ -9,19 +9,22 @@ const savePost = async (post) => {
     return await newPost.save()
 }
 
-const deletePost = async (id) => {
-    return await Post.remove(id)
+const modifyPost = async (id,post) => {
+    return await Post.updateOne({"_id": id},post)
 }
 
-const saveComment = async (id,post) => {
+const removePost = async (id) => {
+    return await Post.findOneAndDelete(id)
+}
+
+const saveComment = async (id,post) => {   
     return await Post.findOneAndUpdate(id,post)
-    //return await Post.update({'_id':id}, {'comments': {'$addToSet':comment}})
-    //{'comment': {'$ne':comment}}
 }
 
 export default {
     findById,
     savePost,
-    deletePost,
+    modifyPost,
+    removePost,
     saveComment
 }

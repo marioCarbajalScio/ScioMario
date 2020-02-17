@@ -52,7 +52,7 @@ postController.delete('/:id', checkToken, async (req, res) => {
     const post = await postRepository.findById(id)
 
     if(post){
-        const del = await postRepository.deletePost(req.body.id)
+        const del = await postRepository.removePost(req.body.id)
             res.status(200).json({del})
     }else{
         res.status(404).json({ message: 'Post NOT DELETED' })
@@ -63,19 +63,15 @@ postController.delete('/:id', checkToken, async (req, res) => {
 postController.patch('/:id', checkToken, async (req, res) => {
     const id = req.params.id
     const post = await postRepository.findById(id)
-
+    //console.log(post)
     if(post){
-        const del = await postRepository.deletePost(req.body.id)
-        if(del){
-            const save = await postRepository.savePost(req.body)
-            if(save){
-                res.status(200).json({save})
-            }else{
-                res.status(404).json({message: 'Error modifying Post'})
-            }
-        }else{
-            res.status(404).json({message: 'Error modifying Post'})
+        const mod = await postRepository.modifyPost(id,req.body)
+        //console.log(mod)
+        if(mod){
+            res.status(200).json({message: 'Post Modifyed'})
         }
+        else
+            res.status(200).json({ message: 'Post NOT MODIFYED' })
     }else{
         res.status(404).json({ message: 'Post NOT FOUND' })
     }

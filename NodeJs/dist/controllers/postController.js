@@ -111,7 +111,7 @@ exports.postController.delete('/:id', checkToken, function (req, res) { return _
             case 1:
                 post = _a.sent();
                 if (!post) return [3 /*break*/, 3];
-                return [4 /*yield*/, postRepository_1.default.deletePost(req.body.id)];
+                return [4 /*yield*/, postRepository_1.default.removePost(req.body.id)];
             case 2:
                 del = _a.sent();
                 res.status(200).json({ del: del });
@@ -125,37 +125,33 @@ exports.postController.delete('/:id', checkToken, function (req, res) { return _
 }); });
 //Modificar Post
 exports.postController.patch('/:id', checkToken, function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, post, del, save;
+    var id, post, mod;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
                 id = req.params.id;
-                return [4 /*yield*/, postRepository_1.default.findById(id)];
+                return [4 /*yield*/, postRepository_1.default.findById(id)
+                    //console.log(post)
+                ];
             case 1:
                 post = _a.sent();
-                if (!post) return [3 /*break*/, 6];
-                return [4 /*yield*/, postRepository_1.default.deletePost(req.body.id)];
+                if (!post) return [3 /*break*/, 3];
+                return [4 /*yield*/, postRepository_1.default.modifyPost(id, req.body)
+                    //console.log(mod)
+                ];
             case 2:
-                del = _a.sent();
-                if (!del) return [3 /*break*/, 4];
-                return [4 /*yield*/, postRepository_1.default.savePost(req.body)];
+                mod = _a.sent();
+                //console.log(mod)
+                if (mod) {
+                    res.status(200).json({ message: 'Post Modifyed' });
+                }
+                else
+                    res.status(200).json({ message: 'Post NOT MODIFYED' });
+                return [3 /*break*/, 4];
             case 3:
-                save = _a.sent();
-                if (save) {
-                    res.status(200).json({ save: save });
-                }
-                else {
-                    res.status(404).json({ message: 'Error modifying Post' });
-                }
-                return [3 /*break*/, 5];
-            case 4:
-                res.status(404).json({ message: 'Error modifying Post' });
-                _a.label = 5;
-            case 5: return [3 /*break*/, 7];
-            case 6:
                 res.status(404).json({ message: 'Post NOT FOUND' });
-                _a.label = 7;
-            case 7: return [2 /*return*/];
+                _a.label = 4;
+            case 4: return [2 /*return*/];
         }
     });
 }); });
@@ -169,27 +165,22 @@ exports.postController.post('/:id/comment', checkToken, function (req, res) { re
                 return [4 /*yield*/, postRepository_1.default.findById(id)];
             case 1:
                 post = (_a.sent());
-                com = req.body.comments;
-                //Accedo a los comentarios
-                post.comments.push(com);
-                post.totalComments = post.totalComments + 1;
-                //Se concatena al post el comentario
-                post.save();
-                res.status(200).json({ post: post });
+                //Se obtiene todo el post y se castea con una interfaz
+                if (post) {
+                    com = req.body.comments;
+                    //Accedo a los comentarios
+                    post.comments.push(com);
+                    //Concatena al post el comentario
+                    post.totalComments = post.totalComments + 1;
+                    //Incrementa el total
+                    post.save();
+                    res.status(200).json({ post: post });
+                }
+                else {
+                    res.status(404).json({ message: 'Post NOT FOUND' });
+                }
                 return [2 /*return*/];
         }
     });
 }); });
-/*
-{
-    "_id":"post-1",
-    "comment":"com-1",
-    "author":{
-        "id":"5e432052f266f4bc0aebb13b",
-        "email":"mcarbajal@sciodev.com",
-        "password":"A11111"
-    },
-    "date":"12/02/2020"
-}
- */ 
 //# sourceMappingURL=postController.js.map

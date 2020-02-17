@@ -59,10 +59,18 @@ var savePost = function (post) { return __awaiter(void 0, void 0, void 0, functi
         }
     });
 }); };
-var deletePost = function (id) { return __awaiter(void 0, void 0, void 0, function () {
+var modifyPost = function (id, post) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, post_1.default.remove(id)];
+            case 0: return [4 /*yield*/, post_1.default.updateOne({ "_id": id }, post)];
+            case 1: return [2 /*return*/, _a.sent()];
+        }
+    });
+}); };
+var removePost = function (id) { return __awaiter(void 0, void 0, void 0, function () {
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0: return [4 /*yield*/, post_1.default.findOneAndDelete(id)];
             case 1: return [2 /*return*/, _a.sent()];
         }
     });
@@ -70,21 +78,16 @@ var deletePost = function (id) { return __awaiter(void 0, void 0, void 0, functi
 var saveComment = function (id, post) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, post_1.default.findOneAndUpdate(id, post)
-                //return await Post.update({'_id':id}, {'comments': {'$addToSet':comment}})
-                //{'comment': {'$ne':comment}}
-            ];
-            case 1: return [2 /*return*/, _a.sent()
-                //return await Post.update({'_id':id}, {'comments': {'$addToSet':comment}})
-                //{'comment': {'$ne':comment}}
-            ];
+            case 0: return [4 /*yield*/, post_1.default.findOneAndUpdate(id, post)];
+            case 1: return [2 /*return*/, _a.sent()];
         }
     });
 }); };
 exports.default = {
     findById: findById,
     savePost: savePost,
-    deletePost: deletePost,
+    modifyPost: modifyPost,
+    removePost: removePost,
     saveComment: saveComment
 };
 //# sourceMappingURL=postRepository.js.map
