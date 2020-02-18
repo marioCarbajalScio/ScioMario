@@ -1,0 +1,18 @@
+<h3>Register</h3>
+<body>
+    <div class="divLogin">
+      <img class="imgForm" src="https://www.constructshow.com/content/informa/construct-show/en/register/_jcr_content/par_page/column_control/par-col-1/column_control_12856/par-col-1/image.img.png/1559654426259.png" alt="User">
+      <form class="formLogin" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <input id="first_name" type="text" formControlName="first_name" placeholder="First Name"><br>
+        <input id="last_name" type="text" formControlName="last_name" placeholder="Last Name"><br>
+        <input id="job" type="text" formControlName="job" placeholder="Job"><br>
+        <input id="email" type="email" formControlName="email" placeholder="E-mail"><br>
+        <input id="password" type="password" formControlName="password" placeholder="Password"><br>
+        <button class="button" type="submit">Sing-up</button>
+        <div class="errorDiv" [hidden]="errorRegister">All inputs are required</div>
+      </form>
+      <hr>
+      <button class="button" type="submit" (click)="onLogin()">Return</button>
+    </div>
+    
+  </body>

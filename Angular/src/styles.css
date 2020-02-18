@@ -1,0 +1,123 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    align-items: center;
+    text-align: center;
+    display: block;
+}
+
+.divLogin{
+    align-items: center;
+    text-align: center;
+    background-color: aqua;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 5px;
+    border: 5px solid black;
+}
+
+.formLogin{
+    display: inline-flexbox;
+}
+
+input{
+    min-width: 200px;
+    padding: 5px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+button{
+    color:black;
+    background-color: rgb(255, 255, 255);
+    border: lightgrey;
+    border-radius: 2px;
+    padding: 5px;
+    margin-top: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.btn-out{
+    background-color: rgba(226, 0, 0, 0.39);
+    font-weight: bolder;
+    border-radius: 5px;
+    border: black 2px solid;
+    margin-bottom: 5px;
+}
+
+.liUsers{
+    text-align: center;
+    padding: 10px;
+    text-anchor: initial;
+}
+
+.divUsers{
+    align-items: center;
+    text-align: justify;
+    background-color: aqua;
+    display: inline-block;
+    padding: 20px;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.divDetails{
+    align-items: center;
+    text-align: justify;
+    background-color: aqua;
+    display: inline-block;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.content{
+    border: grey solid 2px;
+    border-radius: 5px;
+    background-color: rgb(226, 226, 226);
+    max-width: auto;
+
+}
+
+table{
+    padding: 10px;
+    border: black solid 3px;
+    border-radius: 5px;
+}
+
+th{
+    text-align: center;
+    min-width: 150px;
+    font-weight: bolder;
+}
+
+td{
+    border-top: black solid 1px;
+    text-align: center;
+    padding-top: 5px;
+}
+
+img{
+    border-radius: 5px;
+    max-width: 200px;
+    height: auto;
+}
+
+h3{
+    color: black;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.errorDiv{
+    background-color: red;
+    padding: 5px;
+    margin: 5px;
+    border: black solid 2px;
+}
+
+.nextBtn{
+    background-color: aqua;
+    border: black solid 1px;
+    border-radius: 5px;
+    margin: 5px;
+}
