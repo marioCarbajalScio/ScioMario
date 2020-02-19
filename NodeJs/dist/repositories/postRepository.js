@@ -75,10 +75,10 @@ var removePost = function (id) { return __awaiter(void 0, void 0, void 0, functi
         }
     });
 }); };
-var saveComment = function (id, post) { return __awaiter(void 0, void 0, void 0, function () {
+var saveComment = function (post) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, post_1.default.findOneAndUpdate(id, post)];
+            case 0: return [4 /*yield*/, post.save(post)];
             case 1: return [2 /*return*/, _a.sent()];
         }
     });

@@ -17,8 +17,8 @@ const removePost = async (id) => {
     return await Post.findOneAndDelete(id)
 }
 
-const saveComment = async (id,post) => {   
-    return await Post.findOneAndUpdate(id,post)
+const saveComment = async (post) => {   
+    return await post.save(post)
 }
 
 export default {

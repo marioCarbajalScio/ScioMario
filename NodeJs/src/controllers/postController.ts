@@ -63,10 +63,10 @@ postController.delete('/:id', checkToken, async (req, res) => {
 postController.patch('/:id', checkToken, async (req, res) => {
     const id = req.params.id
     const post = await postRepository.findById(id)
-    //console.log(post)
+
     if(post){
         const mod = await postRepository.modifyPost(id,req.body)
-        //console.log(mod)
+
         if(mod){
             res.status(200).json({message: 'Post Modifyed'})
         }
@@ -80,17 +80,18 @@ postController.patch('/:id', checkToken, async (req, res) => {
 //Crear comentario
 postController.post('/:id/comment', checkToken, async (req,res) => {
     const id = req.params.id
-    const post: IPost = <IPost>(await postRepository.findById(id))
     //Se obtiene todo el post y se castea con una interfaz
-
+    const post: IPost = <IPost>(await postRepository.findById(id))
+    
     if(post){   
-        const com = req.body.comments
         //Accedo a los comentarios
-        post.comments.push(com)
+        const com = req.body.comments
         //Concatena al post el comentario
-        post.totalComments = post.totalComments + 1
+        post.comments.push(com)
         //Incrementa el total
-        post.save()
+        post.totalComments = post.totalComments + 1
+        
+        postRepository.saveComment(post)
         res.status(200).json({post})
     }else{
         res.status(404).json({ message: 'Post NOT FOUND' })

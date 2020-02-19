@@ -165,7 +165,6 @@ exports.postController.post('/:id/comment', checkToken, function (req, res) { re
                 return [4 /*yield*/, postRepository_1.default.findById(id)];
             case 1:
                 post = (_a.sent());
-                //Se obtiene todo el post y se castea con una interfaz
                 if (post) {
                     com = req.body.comments;
                     //Accedo a los comentarios
@@ -173,7 +172,8 @@ exports.postController.post('/:id/comment', checkToken, function (req, res) { re
                     //Concatena al post el comentario
                     post.totalComments = post.totalComments + 1;
                     //Incrementa el total
-                    post.save();
+                    //post.save()
+                    postRepository_1.default.saveComment(post);
                     res.status(200).json({ post: post });
                 }
                 else {
