@@ -15,11 +15,12 @@ import { User } from '../shared/models/User';
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   errorRegister : boolean = true;
+  successRegister : boolean = true;
+  newUser: User = new User();
 
   constructor(
     private _formBuilder: FormBuilder,
     private _registerService: RegisterService,
-    private _tokenService: TokenService,
     private _router: Router
   ){ }
 
@@ -47,7 +48,11 @@ export class RegisterComponent implements OnInit {
         if(response){
           console.log(response);
           console.log("User registerd.");
-          this._router.navigateByUrl("users");
+          this.newUser = registerObject;
+          this.newUser.id = response.id;
+          //this._router.navigateByUrl("users");
+          this.errorRegister = true;
+          this.successRegister = false;
         }
       });
     } else {
@@ -55,8 +60,8 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  onLogin(){
-    this._router.navigateByUrl("");
+  onRegister(){
+    this._router.navigateByUrl("users");
   }
 
 }

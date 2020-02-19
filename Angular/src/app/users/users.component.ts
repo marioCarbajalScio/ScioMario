@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from "@angular/router";
 import { UsersList } from '../shared/models/UsersList';
 import { User } from "../shared/models/User";
@@ -10,7 +10,7 @@ import { UserService } from "../shared/services/user.service";
   templateUrl: "./users.component.html",
   styleUrls: ["./users.component.css"]
 })
-export class UsersComponent implements OnInit {
+export class UsersComponent implements OnInit/*, OnDestroy */{
   users: UsersList;
   selectedUser = User;
   details : boolean = true;
@@ -26,6 +26,10 @@ export class UsersComponent implements OnInit {
       this.users = response.data;
     });
   }
+  /*
+  ngOnDestroy(){
+    localStorage.removeItem('token');
+  }*/
 
   selectUser(user: User){
     this._userService.listUser(user.id).subscribe(response => {
@@ -36,7 +40,12 @@ export class UsersComponent implements OnInit {
   }
 
   logOut(){
+    localStorage.removeItem('token');
     this._router.navigateByUrl("");
+  }
+
+  onRegister(){
+    this._router.navigateByUrl("register");
   }
 
   btnInc(){

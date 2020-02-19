@@ -45,6 +45,14 @@ button{
     margin-bottom: 5px;
 }
 
+.btn-reg{
+    background-color: rgba(72, 255, 0, 0.39);
+    font-weight: bolder;
+    border-radius: 5px;
+    border: black 2px solid;
+    margin-bottom: 5px;
+}
+
 .liUsers{
     text-align: center;
     padding: 10px;
@@ -110,6 +118,13 @@ h3{
 
 .errorDiv{
     background-color: red;
+    padding: 5px;
+    margin: 5px;
+    border: black solid 2px;
+}
+
+.successDiv{
+    background-color: rgb(115, 204, 115);
     padding: 5px;
     margin: 5px;
     border: black solid 2px;

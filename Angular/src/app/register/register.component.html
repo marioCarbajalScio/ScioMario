@@ -1,4 +1,4 @@
-<h3>Register</h3>
+<h3>Add User</h3>
 <body>
     <div class="divLogin">
       <img class="imgForm" src="https://www.constructshow.com/content/informa/construct-show/en/register/_jcr_content/par_page/column_control/par-col-1/column_control_12856/par-col-1/image.img.png/1559654426259.png" alt="User">
@@ -10,9 +10,10 @@
         <input id="password" type="password" formControlName="password" placeholder="Password"><br>
         <button class="button" type="submit">Sing-up</button>
         <div class="errorDiv" [hidden]="errorRegister">All inputs are required</div>
+        <div class="successDiv" [hidden]="successRegister">User {{newUser.first_name}} added! Id: {{newUser.id}}</div>
       </form>
       <hr>
-      <button class="button" type="submit" (click)="onLogin()">Return</button>
+      <button class="button" type="submit" (click)="onRegister()">Return</button>
     </div>
     
   </body>

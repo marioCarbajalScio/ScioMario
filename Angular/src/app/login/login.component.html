@@ -1,13 +1,10 @@
 <h3>Login</h3>
-<body>
-  <div class="divLogin">
-    <img class="imgForm" src="https://cdn.iconscout.com/icon/free/png-256/laptop-user-1-1179329.png" alt="User">
-    <form class="formLogin" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <input id="email" type="email" formControlName="email" placeholder="e-mail"><br>
-      <input id="password" type="password" formControlName="password" placeholder="password"><br>
-      <button class="button" type="submit">Login</button>
-    </form>
-    <hr>
-    <button class="button" type="submit" (click)="onRegister()">Register</button>
-  </div>
-</body>
+<div class="divLogin">
+  <img class="imgForm" src="https://cdn.iconscout.com/icon/free/png-256/laptop-user-1-1179329.png" alt="User">
+  <form class="formLogin" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <input id="email" type="email" formControlName="email" placeholder="e-mail"><br>
+    <input id="password" type="password" formControlName="password" placeholder="password"><br>
+    <button class="button" type="submit">Login</button>
+  </form>
+  <div class="errorDiv" [hidden]="errorLogin">All inputs are required</div>
+</div>

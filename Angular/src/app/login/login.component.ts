@@ -12,6 +12,7 @@ import { LoginService } from "../shared/services/login.service";
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  errorLogin: boolean = true;
 
   constructor(
     private _formBuilder: FormBuilder,
@@ -43,11 +44,7 @@ export class LoginComponent implements OnInit {
         this._router.navigateByUrl("users");
       });
     } else {
-      // show some error.
+      this.errorLogin = false;
     }
-  }
-
-  onRegister(){
-    this._router.navigateByUrl("register");
   }
 }
