@@ -1,19 +1,19 @@
 import 'react-native-gesture-handler';
 
-import React, { Component } from 'react';
+import React from 'react';
 import {
   StyleSheet,
   View,
-  ScrollView,
   Text,
 } from 'react-native';
 
 function Details({route}){
-    const index  = route.params.index;
+    const name  = route.params.name;
+    const desc  = route.params.desc;
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text style={styles.descriptionText}>{data.name[index]}</Text>
-        <Text style={styles.descriptionText}>{data.desc[index]}</Text>
+        <Text style={styles.descriptionText}>{name}</Text>
+        <Text style={styles.descriptionText}>{desc}</Text>
       </View>
     )
   }

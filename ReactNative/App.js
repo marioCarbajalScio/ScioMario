@@ -1,21 +1,12 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   StyleSheet,
-  View,
   ScrollView,
-  Text,
-  Button
 } from 'react-native';
 
 import Card from './components/Card/Card'
+import Details from './components/Details/Details'
+
 //Navegation
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
@@ -23,6 +14,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
 
+//Datos de las cards
 const data = {
   name:['Chicken','Pizza','Thai'],
   img:['https://food-images.files.bbci.co.uk/food/recipes/oven-roasted_chicken_13123_16x9.jpg',
@@ -33,26 +25,16 @@ const data = {
 'Thai cooking places emphasis on lightly prepared dishes with strong aromatic components and a spicy edge. Thai chef McDang characterises Thai food as demonstrating "intricacy; attention to detail; texture; color; taste; and the use of ingredients with medicinal benefits, as well as good flavor", as well as care being given to the food`s appearance, smell and context.']
 }
 
-function Details({route}){
-  const index  = route.params.index;
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text style={styles.descriptionText}>{data.name[index]}</Text>
-      <Text style={styles.descriptionText}>{data.desc[index]}</Text>
-    </View>
-  )
-}
-
+//Creacion de Cards
 function CardView({navigation}){
   return(
     <ScrollView style={styles.container}>
-      <Card name={data.name[0]} img={data.img[0]} val={0} navigation = {navigation}/>
-      <Card name={data.name[1]} img={data.img[1]} val={1} navigation = {navigation}/>
-      <Card name={data.name[2]} img={data.img[2]} val={2} navigation = {navigation}/>
+      <Card name={data.name[0]} img={data.img[0]} desc={data.desc[0]} navigation={navigation}/>
+      <Card name={data.name[1]} img={data.img[1]} desc={data.desc[1]} navigation={navigation}/>
+      <Card name={data.name[2]} img={data.img[2]} desc={data.desc[2]} navigation={navigation}/>
     </ScrollView>
   )
 }
-
 
 //Control de rutas
 export default class App extends Component{
