@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:padding="@android:dimen/app_icon_size"
+        android:id="@+id/txtNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/etNombre"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:padding="@android:dimen/app_icon_size"
+        android:id="@+id/txtApellido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/etNombre2"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/btnir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/BotonEnviar"
+        android:background="@color/colorPrimary"
+        android:layout_margin="@android:dimen/app_icon_size"
+        android:textColor="@color/colorAccent"
+        />
+
+</LinearLayout>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Tarea Android</string>
+    <string name="etNombre">Nombre</string>
+    <string name="etNombre2">Apellido</string>
+    <string name="BotonEnviar">Enviar</string>
+    <string name="BotonRegresar">Regresar</string>
+</resources>

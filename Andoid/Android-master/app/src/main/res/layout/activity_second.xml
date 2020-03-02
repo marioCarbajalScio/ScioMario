@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation ="vertical"
+    tools:context=".SecondActivity">
+
+    <TextView
+        android:id="@+id/textSaludo"
+        android:layout_width="match_parent"
+        android:layout_height="107dp"
+        android:background="#ffffff"
+        android:text=""
+        android:textColor="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:textSize="25sp"
+        />
+
+    <TextView
+        android:padding="@android:dimen/app_icon_size"
+        android:gravity="center"
+        android:id="@+id/textSaludo2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="User"
+        android:textSize="18sp" />
+
+    <TextView
+        android:padding="@android:dimen/app_icon_size"
+        android:gravity="center"
+        android:id="@+id/textSaludo3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="User"
+        android:textSize="18sp" />
+
+    <Button
+        android:gravity="center"
+        android:id="@+id/back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/BotonRegresar" />
+</LinearLayout>
