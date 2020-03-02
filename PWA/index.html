@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My first PWA</title>
+  <meta name="description" content="Hello World">
+
+  <meta name="theme-color" content="#F0DB4F">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="shortcut icon" type="image/png" href="./img/Origen.png">
+  <link rel="apple-touch-icon" href="./Origen.png">
+  <link rel="apple-touch-startup-image" href="./Origen.png">
+  <link rel="manifest" href="./manifest.json">
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <header class="Header">
+    <h1>My first PW</h1>
+    <img src="./img/Origen.png" alt="#Origen">
+    <p>
+      This is my first PWA and my favorite Song
+    </p>
+    <nav>
+      <a href="https://www.youtube.com" target="_blank" title="YouTube">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://www.facebook.com/joseangel.gtz" target="_blank" title="Facebook">
+        <i class="fab fa-facebook"></i>
+      </a>
+      <a href="https://www.instagram.com/joseangel.gtz/?hl=es-la" target="_blank" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </nav>
+    <div id='elem'>
+      
+    </div>
+  </header>
+  <div id='element'>
+  </div>
+  <main class="Main">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/diz8JwXNX3w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </main>
+  
+  <script src="./script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js')
+    .then(reg => console.log('Registro de SW exitoso', reg))
+    .catch(err => console.warn('Error al tratar de registrar el sw', err))
+}
+  </script>
+  
+</body>
+
+</html>
