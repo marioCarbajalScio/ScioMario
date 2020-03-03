@@ -21,42 +21,29 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
 <body>
-  <header class="Header">
-    <h1>My first PW</h1>
-    <img src="./img/Origen.png" alt="#Origen">
-    <p>
-      This is my first PWA and my favorite Song
-    </p>
-    <nav>
-      <a href="https://www.youtube.com" target="_blank" title="YouTube">
-        <i class="fab fa-youtube"></i>
-      </a>
-      <a href="https://www.facebook.com/joseangel.gtz" target="_blank" title="Facebook">
-        <i class="fab fa-facebook"></i>
-      </a>
-      <a href="https://www.instagram.com/joseangel.gtz/?hl=es-la" target="_blank" title="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-    </nav>
-    <div id='elem'>
-      
-    </div>
+  <header class="Header" class="row">
+
+    <h1>My PWA</h1>
+
+    <div id='city'></div>
+    <div id='elem'>  </div>
   </header>
-  <div id='element'>
-  </div>
-  <main class="Main">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/diz8JwXNX3w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </main>
-  
+  <hr>
+  <div id='element'></div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <script src="./script.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('./sw.js')
-    .then(reg => console.log('Registro de SW exitoso', reg))
-    .catch(err => console.warn('Error al tratar de registrar el sw', err))
+    .then(reg => console.log('Service Worker Successfull', reg))
+    .catch(err => console.warn('Error trying to create Service Worker', err))
 }
   </script>
   

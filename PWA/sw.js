@@ -1,6 +1,6 @@
 
 //asignar un nombre y versión al cache
-const CACHE_NAME = 'v1_PWA';
+const CACHE_NAME = 'My PWA Cache';
 const Data_CACHE_NAME='api-chache-v1';
 
 const  urlsToCache = [
@@ -14,7 +14,7 @@ const  urlsToCache = [
     './img/Origen.png',
     './img/favicon.png',
     './index.html',
-    'https://jsonplaceholder.typicode.com/posts'
+    'http://api.openweathermap.org/data/2.5/weather?lat=19.7006&lon=-101.186&appid=dd40cd5feabb831330b03c42ba1e4f3f'
   ]
 
 //durante la fase de instalación, generalmente se almacena en caché los activos estáticos
@@ -53,7 +53,7 @@ self.addEventListener('activate', e => {
 //cuando el navegador recupera una url
 self.addEventListener('fetch', e => {
   //Url del cache
-  var data_Url='/posts';
+  var data_Url='/data/2.5/weather?lat=19.7006&lon=-101.186&lang=es&appid=dd40cd5feabb831330b03c42ba1e4f3f';
 
 if(e.request.url.indexOf(data_Url)===0){
   //Manejador de datos 
