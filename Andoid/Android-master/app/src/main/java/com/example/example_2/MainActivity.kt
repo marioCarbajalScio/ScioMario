@@ -3,6 +3,7 @@ package com.example.example_2
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
+import android.widget.Toast
 import com.example.example_2.Entities.RoomUserDatabase
 import com.example.example_2.Entities.UserDao
 import com.example.example_2.Entities.User
@@ -24,9 +25,13 @@ class MainActivity : AppCompatActivity() {
             var Nombre:String = txtNombre.text.toString()
             var Apellido:String = txtApellido.text.toString()
             var intent = Intent(this,SecondActivity::class.java)
-            intent.putExtra("Nombre", Nombre)
-            intent.putExtra("Apellido", Apellido)
-            startActivity(intent)
+            if (Nombre.equals("") || Apellido.equals("")){
+                Toast.makeText(this, "Llene ambos campos para continuar", Toast.LENGTH_SHORT).show()
+            }else{
+                intent.putExtra("Nombre", Nombre)
+                intent.putExtra("Apellido", Apellido)
+                startActivity(intent)
+            }
 
         }
 

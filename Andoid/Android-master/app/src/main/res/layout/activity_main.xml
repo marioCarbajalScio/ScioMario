@@ -29,7 +29,7 @@
         android:id="@+id/btnir"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/BotonEnviar"
+        android:text="Guardar"
         android:background="@color/colorPrimary"
         android:layout_margin="@android:dimen/app_icon_size"
         android:textColor="@color/colorAccent"
