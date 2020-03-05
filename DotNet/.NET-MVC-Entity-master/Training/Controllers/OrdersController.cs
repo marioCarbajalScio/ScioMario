@@ -27,11 +27,6 @@ namespace Training.Controllers
         [Authorize(Roles = "administrador")]
         public async Task<List<DTO.Order>> GetOrders()
         {
-            /*
-            DTO.Order order = new Order();
-            List<DTO.Order> lista_order = new List<Order> { order };
-            return lista_order;
-            */
             return await _IoC.GetService<GetAllOrders>().Execute();
         }
 
@@ -49,7 +44,7 @@ namespace Training.Controllers
             User user = new User()
             {
                 Id = User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier).Value,
-                Email = User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Name).Value,
+                //Email = User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Name).Value,
             };
             return await _IoC.GetService<GetOrdersByUser>().Execute(user);
         }

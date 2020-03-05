@@ -30,7 +30,6 @@ namespace Training
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             var connection = Configuration.GetConnectionString("sqlserver");
@@ -59,7 +58,7 @@ namespace Training
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["serverSigningPassword"])),
                     ValidateLifetime = true,
-                    ClockSkew = TimeSpan.Zero //the default for this setting is 5 minutes
+                    ClockSkew = TimeSpan.Zero 
                 };
 
                 options.Events = new JwtBearerEvents
@@ -101,7 +100,7 @@ namespace Training
             services.AddTransient<IOrdersRepository,OrdersRepository>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
@@ -110,7 +109,6 @@ namespace Training
             }
             else
             {
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
             app.UseAuthentication();
